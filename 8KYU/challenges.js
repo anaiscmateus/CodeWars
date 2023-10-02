@@ -548,14 +548,39 @@ function greet(name) {
   return `Hello, ${name} how are you doing today?`;
 }
 
-
 /* Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests. */
 
 var summation = function (num) {
-    // Code here  
-    let total = 0
-    for (let i = 0; i <= num; i++) {
-      total += i
-    }
-    return total
-  }  
+  // Code here
+  let total = 0;
+  for (let i = 0; i <= num; i++) {
+    total += i;
+  }
+  return total;
+};
+
+String.prototype.toAlternatingCase = function () {
+  // Define your method here :)
+  return this.split("")
+    .map((letter) => {
+      return letter == letter.toUpperCase()
+        ? letter.toLowerCase()
+        : letter.toUpperCase();
+    })
+    .join("");
+};
+
+console.log("hello world".toAlternatingCase(), "HELLO WORLD");
+console.log("HELLO WORLD".toAlternatingCase(), "hello world");
+console.log("hello WORLD".toAlternatingCase(), "HELLO world");
+console.log("HeLLo WoRLD".toAlternatingCase(), "hEllO wOrld");
+console.log("12345".toAlternatingCase(), "12345");
+console.log("1a2b3c4d5e".toAlternatingCase(), "1A2B3C4D5E");
+console.log(
+  "String.prototype.toAlternatingCase".toAlternatingCase(),
+  "sTRING.PROTOTYPE.TOaLTERNATINGcASE"
+);
+console.log(
+  "Hello World".toAlternatingCase().toAlternatingCase(),
+  "Hello World"
+);
