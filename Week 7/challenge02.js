@@ -20,7 +20,7 @@ function squareDigits(num){
     squareNum += digit     // concat squared digits
    }
 
-   return squareNum
+   return Number(squareNum)
 }
 
 console.log(squareDigits(num))
