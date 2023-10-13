@@ -5,16 +5,12 @@
 function jadenfy(quote) {
     let splitQuote = quote.split(' ')
     let newQuote = []
-    splitQuote.map(word => {
-        let first = word.slice(0,1).toUpperCase()
-        let rest = word.slice(1)
-        newWord = first + rest
+    splitQuote.forEach(word => {
+        let newWord = word.slice(0,1).toUpperCase() + word.slice(1)
         newQuote.push(newWord)
     })
     return newQuote.join(' ')
 }
-
-    // return quote.split(' ').map(w => w.slice(0,1).toUpperCase() + w.slice(1)).join(' ')
 
 let quote = "How can mirrors be real if our eyes aren't real"
 console.log(jadenfy(quote))
