@@ -604,19 +604,27 @@ console.log(reverse("CodeWars"), "CodeWars");
 For example, if the parameters passed are (2, 6), the function should return [2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6. */
 
 function findMultiples(integer, limit) {
-    const multiples = [];
-  
-    for (i = integer; i <= limit; i++) {
-      if (i % integer === 0) {
-        multiples.push(i);
-      }
+  const multiples = [];
+
+  for (i = integer; i <= limit; i++) {
+    if (i % integer === 0) {
+      multiples.push(i);
     }
-    return multiples;
   }
-  
-  console.log(findMultiples(5, 25), [5, 10, 15, 20, 25]);
-  console.log(findMultiples(1, 2), [1, 2]);
-  console.log(findMultiples(5, 7), [5]);
-  console.log(findMultiples(4, 27), [4, 8, 12, 16, 20, 24]);
-  console.log(findMultiples(11, 54), [11, 22, 33, 44]);
-  
+  return multiples;
+}
+
+console.log(findMultiples(5, 25), [5, 10, 15, 20, 25]);
+console.log(findMultiples(1, 2), [1, 2]);
+console.log(findMultiples(5, 7), [5]);
+console.log(findMultiples(4, 27), [4, 8, 12, 16, 20, 24]);
+console.log(findMultiples(11, 54), [11, 22, 33, 44]);
+
+/* Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string): */
+
+function sumStr(a, b) {
+  return String(Number(a) + Number(b));
+}
+
+console.log(sumStr("4", "5"), "9");
+console.log(sumStr("34", "5"), "39");
