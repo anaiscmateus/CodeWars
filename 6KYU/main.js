@@ -4,42 +4,44 @@ You will be given a number and you will need to return it as a string in Expande
 // return the expanded form of the number in a string '10 + 2'
 
 function expandedForm(num) {
-    // Your code here
-    // take in the number
-    // convert it to a string
-    // loop through each of the numbers in the string 
-    // take the length of the string into account
+  // Your code here
+  // take in the number
+  // convert it to a string
+  // loop through each of the numbers in the string
+  // take the length of the string into account
 
-    let expandedNumber = []
-    let lastNumIndex = num.toString().length - 1
-    num.toString().split("").forEach((digit, i) => {
-        if (digit > 0) {
-            let distance = lastNumIndex - i // determines how many zeroes there are, the distance between the first number and the last number
-            for (let i = 0; i < distance; i++) {
-                    digit += '0'
-                }
-
-            expandedNumber.push(digit)
+  let expandedNumber = [];
+  let lastNumIndex = num.toString().length - 1;
+  num
+    .toString()
+    .split("")
+    .forEach((digit, i) => {
+      if (digit > 0) {
+        let distance = lastNumIndex - i; // determines how many zeroes there are, the distance between the first number and the last number
+        for (let i = 0; i < distance; i++) {
+          digit += "0";
         }
-    })
 
-    return expandedNumber.join(" + ")
+        expandedNumber.push(digit);
+      }
+    });
+
+  return expandedNumber.join(" + ");
 }
-
 
 /* Complete the solution so that the function will break up camel casing, using a space between words. */
 // complete the function
 // parameters a string that will get looped thru
 // return a string that breaks up the word based on camelCasing
 function solution(string) {
-    let solutionString = []
-    string.split("").forEach(letter => {
-        if(letter === letter.toUpperCase()) {
-            solutionString.push(' ')
-        }
-        solutionString.push(letter)
-    })
-    return solutionString.join("")
+  let solutionString = [];
+  string.split("").forEach((letter) => {
+    if (letter === letter.toUpperCase()) {
+      solutionString.push(" ");
+    }
+    solutionString.push(letter);
+  });
+  return solutionString.join("");
 }
 
 /* The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate. */
@@ -54,16 +56,19 @@ function solution(string) {
 "Success"  =>  ")())())"
 "(( @"     =>  "))((" */
 
-function duplicateEncode(word){
-    // .toLowerCase()
-    // .split()
-    const newWord = word.toLowerCase().split("").map((letter, i, word) => {
-        return word.indexOf(letter) === word.lastIndexOf(letter) ? "(" : ")"
-    })
+function duplicateEncode(word) {
+  // .toLowerCase()
+  // .split()
+  const newWord = word
+    .toLowerCase()
+    .split("")
+    .map((letter, i, word) => {
+      return word.indexOf(letter) === word.lastIndexOf(letter) ? "(" : ")";
+    });
 
-    return newWord.join("")
-    // .map()
-    // .join()
+  return newWord.join("");
+  // .map()
+  // .join()
 }
 
 // Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
@@ -75,17 +80,17 @@ function duplicateEncode(word){
 // uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
-var uniqueInOrder=function(iterable) {
-    // your code here - remember iterable can be a string or an array
-    // loop through parameter to grab only the distinct values
-    let uniqueList = []
-    for (let i = 0; i < iterable.length; i++) {
-        if (iterable[i] !== iterable[i+1]) {
-            uniqueList.push(iterable[i])
-        }
+var uniqueInOrder = function (iterable) {
+  // your code here - remember iterable can be a string or an array
+  // loop through parameter to grab only the distinct values
+  let uniqueList = [];
+  for (let i = 0; i < iterable.length; i++) {
+    if (iterable[i] !== iterable[i + 1]) {
+      uniqueList.push(iterable[i]);
     }
-    return uniqueList // return list of distinct values
-}
+  }
+  return uniqueList; // return list of distinct values
+};
 
 /* Your task is to make two functions ( max and min, or maximum and minimum, etc., depending on the language ) that receive a list of integers as input, and return the largest and lowest number in that list, respectively.
 
@@ -96,13 +101,13 @@ var uniqueInOrder=function(iterable) {
 
 */
 
-var min = function(list){
-    return Math.min(...list)
-}
+var min = function (list) {
+  return Math.min(...list);
+};
 
-var max = function(list){
-    return Math.max(...list)
-}
+var max = function (list) {
+  return Math.max(...list);
+};
 
 // In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
 
@@ -111,35 +116,32 @@ var max = function(list){
 /* examples - ["abracadabra","allottee","assessee"]),['abracadabra','alote','asese']
 ["kelless","keenness"]), ['keles','kenes'] */
 
-
 function dup(s) {
-    // loop through each letter
-    // check if the current letter is the same as the next letter
-    // if its not the same, add it to the new array
-    let noDupes = []
+  // loop through each letter
+  // check if the current letter is the same as the next letter
+  // if its not the same, add it to the new array
+  let noDupes = [];
 
-    for (let i = 0; i < s.length; i++) {
-        const word = s[i].split("")
-        
-        for (let i = 0; i < word.length; i++) {
-            const letter = word[i]
-            const nextLetter = word[i + 1]
+  for (let i = 0; i < s.length; i++) {
+    const word = s[i].split("");
 
-            if (letter === nextLetter) {
-                word.splice(i, 1)
-            }         
-        }
+    for (let i = 0; i < word.length; i++) {
+      const letter = word[i];
+      const nextLetter = word[i + 1];
 
-        noDupes.push(word.join(""))
+      if (letter === nextLetter) {
+        word.splice(i, 1);
+      }
     }
 
-    return noDupes
-};
+    noDupes.push(word.join(""));
+  }
+
+  return noDupes;
+}
 
 // console.log(dup(["ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"]))
 // console.log(dup(["abracadabra","allottee","assessee"]))
-
-
 
 // example problems
 /* Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
@@ -153,12 +155,14 @@ All inputs will be valid. */
 // examples - "i love coding" => "love coding i"
 
 function organizedList(x) {
-    // split(" ") x
-    // loop through each word, and grab the last letter
-    // the index of the word will be ordered in alphabetical order by the last letter
-    const listOfWords = x.split(" ").sort((a, b) => a.charCodeAt(a[-1]) - b.charCodeAt(b[-1]))
+  // split(" ") x
+  // loop through each word, and grab the last letter
+  // the index of the word will be ordered in alphabetical order by the last letter
+  const listOfWords = x
+    .split(" ")
+    .sort((a, b) => a.charCodeAt(a[-1]) - b.charCodeAt(b[-1]));
 
-    return listOfWords
+  return listOfWords;
 }
 
 // console.log(organizedList('i love coding'))
@@ -178,47 +182,44 @@ solve([[1,2,3],[3,4,6,6,7],[8,9,10,12,5,6]]),72)
 Hint: You have an array full of arrays. Map through the parent array and make sure each sub array is a set aka no duplicate numbers. Once each sub array contains no duplicates you can just reduce multiplying the length of each sub array together to get the total combinations  */
 
 // params - taking in an array of arrays
-// return a number based on the product of the non duplicate array. 
+// return a number based on the product of the non duplicate array.
 
 function calcNumOfUniqueArrays(arr) {
-    // loop through the array to identify the duplicates
-    // remove one duplicate value from the array
+  // loop through the array to identify the duplicates
+  // remove one duplicate value from the array
 
-    let counter = {}
+  let counter = {};
 
-    arr.forEach(e => {
-        e.forEach(x => {
-            if (counter[x]) {
-                counter[x] ++
-            } else {
-                counter[x] = 1
-            }
-        })
+  arr.forEach((e) => {
+    e.forEach((x) => {
+      if (counter[x]) {
+        counter[x]++;
+      } else {
+        counter[x] = 1;
+      }
+    });
 
-        for (const [keys, value] of Object.entries(counter)) {
-            if (value === 1) {
+    for (const [keys, value] of Object.entries(counter)) {
+      if (value === 1) {
+      }
+    }
+  });
 
-            }
-        }    
-    })
+  return counter;
 
+  // for (let i = 0; i < arr.length; i++) {
+  //     if (counter[arr[i]]) {
+  //         counter[arr[i]] ++
+  //     } else {
+  //         counter[arr[i]] = 1
+  //     }
+  // }
 
-    return counter
-
-    // for (let i = 0; i < arr.length; i++) {
-    //     if (counter[arr[i]]) {
-    //         counter[arr[i]] ++
-    //     } else {
-    //         counter[arr[i]] = 1
-    //     }
-    // }
-
-    // return counter
+  // return counter
 }
 
 // console.log(calcNumOfUniqueArrays([[1,2],[4],[5,6]]))
 // console.log(calcNumOfUniqueArrays([[1,2],[4,4],[5,6,6]]))
-
 
 /* Count the number of Duplicates
 Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
@@ -232,33 +233,35 @@ Example
 "aA11" -> 2 # 'a' and '1'
 "ABBA" -> 2 # 'A' and 'B' each occur twice */
 
-// params - string 
+// params - string
 // returns the count of duplicate characters in the string
 
-function duplicateCount(text){
-
-  const counter = {}
-  let result = 0
-  text.toLowerCase().split("").forEach(e => {
-    if(counter[e]) {
-        counter[e] ++
-    } else {
-        counter[e] = 1
-    }
-  })
+function duplicateCount(text) {
+  const counter = {};
+  let result = 0;
+  text
+    .toLowerCase()
+    .split("")
+    .forEach((e) => {
+      if (counter[e]) {
+        counter[e]++;
+      } else {
+        counter[e] = 1;
+      }
+    });
 
   for (const [key, value] of Object.entries(counter)) {
     if (value > 1) {
-        result++
+      result++;
     }
   }
 
-  return result
+  return result;
 }
 
-console.log(duplicateCount('abcde'))
-console.log(duplicateCount('aabbcde'))
-console.log(duplicateCount('aabBcde'))
+console.log(duplicateCount("abcde"));
+console.log(duplicateCount("aabbcde"));
+console.log(duplicateCount("aabBcde"));
 
 /* Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
 
@@ -271,17 +274,22 @@ None of the arrays will be empty, so you don't have to worry about that! */
 // return the indexes with an even number, but skip over 0
 
 function removeEveryOther(arr) {
-    return arr.map((e, i) => {
+  return arr
+    .map((e, i) => {
       if (i === 0 || i % 2 === 0) {
-        return e
+        return e;
       }
-    }).filter(e => e !== undefined)
-  }
-  
-  console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']),['Hello', 'Hello Again'])
-  console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),[1, 3, 5, 7, 9])
-  console.log(removeEveryOther([[1, 2]]), [[1, 2]])
-  console.log(removeEveryOther([['Goodbye'], {'Great': 'Job'}]),[['Goodbye']])
+    })
+    .filter((e) => e !== undefined);
+}
+
+console.log(removeEveryOther(["Hello", "Goodbye", "Hello Again"]), [
+  "Hello",
+  "Hello Again",
+]);
+console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), [1, 3, 5, 7, 9]);
+console.log(removeEveryOther([[1, 2]]), [[1, 2]]);
+console.log(removeEveryOther([["Goodbye"], { Great: "Job" }]), [["Goodbye"]]);
 
 /* Given a string of words, you need to find the highest scoring word.
 
@@ -309,36 +317,68 @@ All letters will be lowercase and all inputs will be valid. */
 // point are according to the position in the alphabet
 
 function high(str) {
-    const arrOfWords = str.split(" ");
-  
-    const scores = arrOfWords.map(word =>
-      word.split("").reduce((a, b) => a + b.charCodeAt() - 96, 0)
-    );
-  
-    const maxScore = Math.max(...scores);
-    const indexOfMaxScore = scores.indexOf(maxScore);
-  
-    return arrOfWords[indexOfMaxScore];
-  }
-  
-  console.log(high("man i need a taxi up to ubud"), "taxi");
-  console.log(high('what time are we climbing up the volcano'), 'volcano');
-  console.log(high('take me to semynak'), 'semynak');
-  console.log(high('aa b'), 'aa');
-  console.log(high('b aa'), 'b');
-  console.log(high('bb d'), 'bb');
-  console.log(high('d bb'), 'd');
-  console.log(high('aaa b'), 'aaa');
+  const arrOfWords = str.split(" ");
 
-  function alphabetPosition(text) {
-    return text
-      .toLowerCase()
-      .split("")
-      .map((letter) => {
-        return letter.charCodeAt(0) - 96 > 0 && letter.charCodeAt(0) - 96 <= 26
-          ? letter.charCodeAt(0) - 96
-          : null;
-      })
-      .filter(Number)
-      .join(" ");
+  const scores = arrOfWords.map((word) =>
+    word.split("").reduce((a, b) => a + b.charCodeAt() - 96, 0)
+  );
+
+  const maxScore = Math.max(...scores);
+  const indexOfMaxScore = scores.indexOf(maxScore);
+
+  return arrOfWords[indexOfMaxScore];
+}
+
+console.log(high("man i need a taxi up to ubud"), "taxi");
+console.log(high("what time are we climbing up the volcano"), "volcano");
+console.log(high("take me to semynak"), "semynak");
+console.log(high("aa b"), "aa");
+console.log(high("b aa"), "b");
+console.log(high("bb d"), "bb");
+console.log(high("d bb"), "d");
+console.log(high("aaa b"), "aaa");
+
+function alphabetPosition(text) {
+  return text
+    .toLowerCase()
+    .split("")
+    .map((letter) => {
+      return letter.charCodeAt(0) - 96 > 0 && letter.charCodeAt(0) - 96 <= 26
+        ? letter.charCodeAt(0) - 96
+        : null;
+    })
+    .filter(Number)
+    .join(" ");
+}
+
+/* The museum of incredibly dull things
+The museum of incredibly dull things wants to get rid of some exhibits. Miriam, the interior architect, comes up with a plan to remove the most boring exhibits. She gives them a rating, and then removes the one with the lowest rating.
+
+However, just as she finished rating all exhibits, she's off to an important fair, so she asks you to write a program that tells her the ratings of the exhibits after removing the lowest one. Fair enough.
+
+Task
+Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with the lowest index. If you get an empty array/list, return an empty array/list.
+
+Don't change the order of the elements that are left.
+
+Examples
+* Input: [1,2,3,4,5], output = [2,3,4,5]
+* Input: [5,3,2,1,4], output = [5,3,2,4]
+* Input: [2,2,1,2,1], output = [2,2,2,1] */
+
+function removeSmallest(numbers) {
+    if (numbers.length === 0) {
+      return [];
+    }
+  
+    const smallestNumberIndex = numbers.indexOf(Math.min(...numbers));
+    return [
+      ...numbers.slice(0, smallestNumberIndex),
+      ...numbers.slice(smallestNumberIndex + 1),
+    ];
   }
+  
+  console.log(removeSmallest([1, 2, 3, 4, 5]), [2, 3, 4, 5]);
+  console.log(removeSmallest([5, 3, 2, 1, 4]), [5, 3, 2, 4]);
+  console.log(removeSmallest([2, 2, 1, 2, 1]), [2, 2, 2, 1]);
+  console.log(removeSmallest([]), []);
