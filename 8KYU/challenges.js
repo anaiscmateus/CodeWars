@@ -187,3 +187,10 @@ function check(a, x) {
         return false // if not, return false
     }
 }
+
+// Write a function which converts the input string to uppercase.
+
+function makeUpperCase(str) {
+    // Code here
+    return str.toUpperCase()
+  }
