@@ -215,3 +215,67 @@ function feast(beast, dish) {
         return false
       }
     }
+
+/* Given a string, you have to return a string in which each character (case-sensitive) is repeated once. */
+
+function doubleChar(str) {
+    // Your code here
+    const doubleStr = str.split('').map(function(letter)
+    {
+        return letter + letter
+    })
+
+    return doubleStr.join('')
+}
+  
+console.log(doubleChar("abcd"))
+
+
+/* Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+
+The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+
+Mind the input validation. */
+
+function sumArray(array) {
+    let sum = 0
+    if (array) {
+        if(array.length > 2) {
+            array.sort((a,b) => a - b)
+            for (let i = 1; i < (array.length - 1); i++) {
+                sum += array[i]
+            }
+        }
+    }
+    return sum
+}
+
+console.log(sumArray(null))
+console.log(sumArray([]))
+console.log(sumArray([ 3, 5 ]))
+console.log(sumArray([ 0, 1, 6, 10, 10 ]))
+
+/* Write function bmi that calculates body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+
+if bmi <= 25.0 return "Normal"
+
+if bmi <= 30.0 return "Overweight"
+
+if bmi > 30 return "Obese" */
+
+// function bmi(weight, height) {
+//     let bmi = weight / (height * 2)
+//     if (bmi <= 18.5) {
+//         return "Underweight"
+//     } else if (bmi <= 25.0){
+//         return "Normal"
+//     } else if (bmi <= 30.0){
+//         return "Overweight"
+//     } else if (bmi > 30) {
+//         return "Obese"
+//     }
+// }
+
+// console.log(bmi(80, 1.80))
