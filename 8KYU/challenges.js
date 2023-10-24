@@ -255,27 +255,15 @@ console.log(sumArray([]))
 console.log(sumArray([ 3, 5 ]))
 console.log(sumArray([ 0, 1, 6, 10, 10 ]))
 
-/* Write function bmi that calculates body mass index (bmi = weight / height2).
+function squareSum(numbers){
+    // Complete the square sum function so that it squares each number passed into it and then sums the results together.
+    let sum = 0
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i] ** 2
+    }
 
-if bmi <= 18.5 return "Underweight"
+    return sum
+}
 
-if bmi <= 25.0 return "Normal"
-
-if bmi <= 30.0 return "Overweight"
-
-if bmi > 30 return "Obese" */
-
-// function bmi(weight, height) {
-//     let bmi = weight / (height * 2)
-//     if (bmi <= 18.5) {
-//         return "Underweight"
-//     } else if (bmi <= 25.0){
-//         return "Normal"
-//     } else if (bmi <= 30.0){
-//         return "Overweight"
-//     } else if (bmi > 30) {
-//         return "Obese"
-//     }
-// }
-
-// console.log(bmi(80, 1.80))
+console.log(squareSum([1,2]))
+console.log(squareSum([0, 3, 4, 5]))
