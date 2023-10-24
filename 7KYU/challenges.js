@@ -179,3 +179,18 @@ function DNAtoRNA(dna) {
 console.log(DNAtoRNA("TTTT"))
 console.log(DNAtoRNA("GCAT"))
 console.log(DNAtoRNA("GACCGCCGCC"))
+
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+function highAndLow(numbers){
+    // split the string into an array, and sort the numbers from smallest to largest
+    const n = numbers.split(" ").sort(function(a,b) {
+        return a - b
+    })
+    
+    // return the largest and the smallest numbers in a string
+    return `${n[(n.length - 1)]} ${n[0]}`
+}
+
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
+console.log(highAndLow("1 2 3"))
