@@ -194,3 +194,28 @@ function highAndLow(numbers){
 
 console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
 console.log(highAndLow("1 2 3"))
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+function XO(str) {
+    let letters = str.toLowerCase().split("")
+    let xCount = 0
+    let yCount = 0
+    let equalCount = false
+    letters.forEach(function(letter){
+        if (letter === 'x') {
+            xCount += 1
+        } else if (letter === 'o') {
+            yCount += 1
+        }
+    })
+    
+    if (xCount === yCount) {
+        equalCount = true
+    }
+
+    return equalCount
+}
+
+console.log(XO('xo'))
+console.log(XO("xxxm"))
