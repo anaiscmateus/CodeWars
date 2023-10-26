@@ -12,8 +12,6 @@ The second value in the first pair in the array is 0, since the bus is empty in 
 
 let busStops = [[10,0],[3,5],[5,8]]
 
-// console.log(busStops[1][0])
-
 let number = function(busStops){
     // Good Luck!
     // return the number of people still on the bus after the last stop
@@ -61,7 +59,6 @@ function squareDigits(num){
    return Number(squareNum)
 }
 
-console.log(squareDigits(num))
 
 /* Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
 
@@ -80,7 +77,6 @@ function sumTwoSmallestNumbers(numbers) {
 }
 
 let nums = [5, 8, 12, 19, 22]
-console.log(sumTwoSmallestNumbers(nums))
 
 /* You might know some pretty large perfect squares. But what about the NEXT one?
 
@@ -100,8 +96,6 @@ function findNextSquare(sq) {
     }
 }
 
-console.log(findNextSquare(625))
-
 /* Write a function which calculates the average of the numbers in a given list.
 Note: Empty arrays should return 0. */
 function findAverage(array) {
@@ -116,7 +110,6 @@ function findAverage(array) {
 }
 
 let numbers = [1,2,3,4]
-console.log(findAverage(numbers))
 
 // Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word. For simplicity, you'll have to capitalize each word, check out how contractions are expected to be in the example below.
 
@@ -133,7 +126,6 @@ function jadenfy(quote) {
 }
 
 let quote = "How can mirrors be real if our eyes aren't real"
-console.log(jadenfy(quote))
 
 /* Simple, given a string of words, return the length of the shortest word(s).
 
@@ -146,10 +138,6 @@ function findShort(s){
 
     return words[0].length
 }
-
-let s = 'bitcoin take over the world maybe who knows perhaps'
-console.log(findShort(s))
-
 
 /* Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
 
@@ -176,10 +164,6 @@ function DNAtoRNA(dna) {
     return rnaSequence.join("") // return rnaSequence as a string
 }
 
-console.log(DNAtoRNA("TTTT"))
-console.log(DNAtoRNA("GCAT"))
-console.log(DNAtoRNA("GACCGCCGCC"))
-
 // In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 
 function highAndLow(numbers){
@@ -191,9 +175,6 @@ function highAndLow(numbers){
     // return the largest and the smallest numbers in a string
     return `${n[(n.length - 1)]} ${n[0]}`
 }
-
-console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
-console.log(highAndLow("1 2 3"))
 
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
 
@@ -217,5 +198,60 @@ function XO(str) {
     return equalCount
 }
 
-console.log(XO('xo'))
-console.log(XO("xxxm"))
+/* In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
+
+The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+
+Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+
+You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+
+The string has a length greater or equal to one and contains only letters from ato z. */
+
+function printerError(s) {
+    // your code
+    let errorCount = 0
+    s.split("").forEach(letter => {
+        if (letter.toLowerCase() > 'm') {
+            errorCount ++
+        }
+    })
+    return `${errorCount}/${s.length}`
+}
+
+// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+
+// what are the parameters of the function?
+// n which is a number
+// the amount of times we increase by 3
+// what will the function return 
+// return the sum of the fractions
+
+function SeriesSum(n)
+{
+    // declare variable for sum and set to zero
+    let btm = 1
+    let sum = 1
+    // create a for loop where we let i = 1, i < n, i+3
+    for (let i = 0; i < n; i++) {
+        // check to see is btm is greater than 1
+        if (btm > 1) {
+            // add 1/btm to the sum
+            sum += 1/btm
+        }
+
+        // add 3 to btm since we are counting by 3s
+        btm += 3
+
+    }  
+
+    // if n < 1, then the sum is 0
+    if (n < 1 ) {
+        sum = 0
+    }
+
+
+    // return the sum rounded to two decimal places as a string
+    return sum.toFixed(2).toString()
+    
+}
