@@ -267,3 +267,21 @@ function squareSum(numbers){
 
 console.log(squareSum([1,2]))
 console.log(squareSum([0, 3, 4, 5]))
+
+/* Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+
+Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :) */
+
+// what are the parameters of the function?
+// integer; the number of times the hula hoop goes around
+
+// what will the function return?
+// an encouraging message
+    // if n > 10, then the message will be different
+
+function hoopCount (n) {
+    // check to see if n >= 10
+    // if yes, we are going to console log "Great, now move on to tricks"
+    // if n < 10 then console log "Keep at it until you get it"
+    return n >= 10 ? "Great, now move on to tricks" : 'Keep at it until you get it'
+}
