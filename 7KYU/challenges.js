@@ -234,7 +234,7 @@ function SeriesSum(n)
     let sum = 1
     // create a for loop where we let i = 1, i < n, i+3
     for (let i = 0; i < n; i++) {
-        // check to see is btm is greater than 1
+        // check Rto see is btm is greater than 1
         if (btm > 1) {
             // add 1/btm to the sum
             sum += 1/btm

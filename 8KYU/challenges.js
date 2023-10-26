@@ -7,8 +7,6 @@ function doubleInteger(i) {
     return i // return the sum
 }
 
-console.log(doubleInteger(10))
-
 // GOAL: It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
 function removeChar(str){
     
@@ -21,8 +19,6 @@ function removeChar(str){
    
     return word // return the new word
 }
-
-console.log(removeChar('eloquent'))
 
 // GOAL: You get an array of numbers, return the sum of all of the positives ones.
 // Example [1,-4,7,12] => 1 + 7 + 12 = 20
@@ -47,8 +43,6 @@ function positiveSum(arr) {
     return sum // return the sum of the positive numbers
 }
 
-console.log(positiveSum(arrOfNums))
-
 // GOAL: You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
 // Considering these factors, write a function that tells you if it is possible to get to the pump or not.
 // Function should return true if it is possible and false if not.
@@ -64,15 +58,11 @@ const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
     }
 }
 
-console.log(zeroFuel(50, 25, 2))
-
 // GOAL: Implement a function which convert the given boolean value into its string representation.
 // Note: Only valid inputs will be given.
 function booleanToString(b){
     return b.toString() // convert b to a string and return it
 }
-
-console.log(booleanToString(true))
 
 // Introduction
 // The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
@@ -88,8 +78,6 @@ function century(year) {
     return century // return century
 }
 
-console.log(century(2000))
-
 // GOAL: Clock shows h hours, m minutes and s seconds after midnight.
 // Your task is to write a function which returns the time since midnight in milliseconds.
 function past(h, m, s){
@@ -97,8 +85,6 @@ function past(h, m, s){
     timeSinceMidnight = (h * 3600000) + (m * 60000) + (s * 1000)
     return timeSinceMidnight
 }
-
-console.log(past(0, 2, 1))
 
 // Complete the solution so that it reverses the string passed into it.
 function solution(str){
@@ -169,9 +155,6 @@ function areYouPlayingBanjo(name) {
     }
 }
 
-console.log(areYouPlayingBanjo("Adam"))
-console.log(areYouPlayingBanjo("rolf"))
-
 /* You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
 
 Array can contain numbers or strings. X can be either.
@@ -228,7 +211,7 @@ function doubleChar(str) {
     return doubleStr.join('')
 }
   
-console.log(doubleChar("abcd"))
+// console.log(doubleChar("abcd"))
 
 
 /* Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
@@ -250,11 +233,6 @@ function sumArray(array) {
     return sum
 }
 
-console.log(sumArray(null))
-console.log(sumArray([]))
-console.log(sumArray([ 3, 5 ]))
-console.log(sumArray([ 0, 1, 6, 10, 10 ]))
-
 function squareSum(numbers){
     // Complete the square sum function so that it squares each number passed into it and then sums the results together.
     let sum = 0
@@ -264,9 +242,6 @@ function squareSum(numbers){
 
     return sum
 }
-
-console.log(squareSum([1,2]))
-console.log(squareSum([0, 3, 4, 5]))
 
 /* Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
 
@@ -284,4 +259,38 @@ function hoopCount (n) {
     // if yes, we are going to console log "Great, now move on to tricks"
     // if n < 10 then console log "Keep at it until you get it"
     return n >= 10 ? "Great, now move on to tricks" : 'Keep at it until you get it'
+}
+
+/* Create a function that gives a personalized greeting. This function takes two parameters: name and owner. */
+// what are the parameters?
+// name and owner which are strings
+
+// what will the function return?
+// the message "hello boss" if the name is equal to the owner, and "hello guest" if not
+
+function greet (name, owner) {
+    // have a conditional to check to see if the name === owner
+    // if it is, return "hello boss"
+    // else, return "hello customer"
+    return name.toLowerCase() === owner.toLowerCase() ? "Hello boss" : "Hello guest"
+}
+
+/* Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24 */
+
+// what are the params?
+// array: a list of numbers
+
+// what will the function return? 
+// the product of the nums of the array
+
+function grow(x){
+    // declare product variable and set it equal to 1
+    let product = 1
+
+    // loop through each number of the array and multiply it to the product variable
+    x.forEach(n => product *= n)
+
+    return product // return the product variable
 }
