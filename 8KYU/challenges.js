@@ -645,3 +645,28 @@ console.log(isPalindrome("Bob"), true);
 console.log(isPalindrome("Madam"), true);
 console.log(isPalindrome("AbBa"), true);
 console.log(isPalindrome(""), true);
+
+/* DESCRIPTION:
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+The output should be two capital letters with a dot separating them.
+
+It should look like this:
+
+Sam Harris => S.H
+
+patrick feeney => P.F */
+
+function abbrevName(name) {
+  const nameParts = name.split(" ");
+
+  return `${nameParts[0].charAt(0).toUpperCase()}.${nameParts[1]
+    .charAt(0)
+    .toUpperCase()}`;
+}
+
+console.log(abbrevName("Sam Harris"), "S.H");
+console.log(abbrevName("Patrick Feenan"), "P.F");
+console.log(abbrevName("Evan Cole"), "E.C");
+console.log(abbrevName("P Favuzzi"), "P.F");
+console.log(abbrevName("David Mendieta"), "D.M");
