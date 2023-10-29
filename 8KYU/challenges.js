@@ -311,8 +311,6 @@ Your points are not included in the array of your class's points. For calculatin
 function betterThanAverage(classPoints, yourPoints) {
     // Your code here
     // get the average of the grades of your classmates
-    let sum = 0
-    classPoints.forEach(point => sum += point)
     // compare the average to your score and return true or false
-    return yourPoints > sum / classPoints.length ? true : false
+    return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length ? true : false
 }
