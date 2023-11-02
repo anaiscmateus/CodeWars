@@ -314,3 +314,10 @@ function betterThanAverage(classPoints, yourPoints) {
     // compare the average to your score and return true or false
     return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length ? true : false
 }
+
+/* Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade. */
+
+function getGrade (s1, s2, s3) {
+    let avg = (s1 + s2 + s3) / 3
+    return avg < 59 ? 'F' : avg < 69 ? 'D' : avg < 79 ? 'C' : avg < 89 ? 'B' : avg <= 100 ? 'A' : avg
+}
