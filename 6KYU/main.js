@@ -40,3 +40,32 @@ function solution(string) {
     })
     return solutionString.join("")
 }
+
+/* The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate. */
+
+// params? a string, convert to a new string
+// ignore capitalization
+// return a new string with "(" or ")"
+
+/* Examples
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" */
+
+function duplicateEncode(word){
+    // .toLowerCase()
+    // .split()
+    const newWord = word.toLowerCase().split("").map((letter, i, word) => {
+        return word.indexOf(letter) === word.lastIndexOf(letter) ? "(" : ")"
+    })
+
+    return newWord.join("")
+    // .map()
+    // .join()
+}
+
+console.log(duplicateEncode("din"),"(((")
+console.log(duplicateEncode("recede"),"()()()")
+console.log(duplicateEncode("Success"),")())())")
+console.log(duplicateEncode("(( @"),"))((")

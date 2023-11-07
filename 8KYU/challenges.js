@@ -2,7 +2,7 @@
 // GOAL: Code as fast as you can! You need to double the integer and return it.
 function doubleInteger(i) {
     // i will be an integer. Double it and return it.
-    
+
     i += i // add i to itself
     return i // return the sum
 }
@@ -328,19 +328,5 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 
 const quarterOf = (month) => {
     // Your code here
-    if (month <= 3) {
-        return 1
-    }
-
-    if (month <= 6) {
-        return 2
-    }
-
-    if (month <= 9) {
-        return 3
-    }
-
-    if (month <= 12) {
-        return 4
-    }
+   return month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : 4
 }
