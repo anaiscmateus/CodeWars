@@ -65,7 +65,26 @@ function duplicateEncode(word){
     // .join()
 }
 
-console.log(duplicateEncode("din"),"(((")
-console.log(duplicateEncode("recede"),"()()()")
-console.log(duplicateEncode("Success"),")())())")
-console.log(duplicateEncode("(( @"),"))((")
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+// parameters - taking in a string, or array
+// returning a list of distinct items from the iterable param conserving the order of elems
+
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+
+var uniqueInOrder=function(iterable) {
+    // your code here - remember iterable can be a string or an array
+    // loop through parameter to grab only the distinct values
+    let uniqueList = []
+    for (let i = 0; i < iterable.length; i++) {
+        if (iterable[i] !== iterable[i+1]) {
+            uniqueList.push(iterable[i])
+        }
+    }
+    return uniqueList // return list of distinct values
+}
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'), ['A','B','C','D','A','B'])
+console.log(uniqueInOrder([1,2,2,3,3]), [1,2,3])
