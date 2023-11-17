@@ -389,3 +389,14 @@ function checkForFactor (base, factor) {
     // code here
     return base % factor === 0 ? true : false
 }
+
+/* When provided with a number between 0-9, return it in words.
+
+Input :: 1
+
+Output :: "One". */ 
+
+function switchItUp(number){
+    //Write your own Code!
+    return number === 1 ? 'One' : number === 2 ? 'Two' : number === 3 ? 'Three': number === 4 ? 'Four' : number === 5 ? 'Five' : number === 6 ? 'Six' : number === 7 ? 'Seven' : number === 8 ? 'Eight' : number === 9 ? 'Nine' : number === 0 ? 'Zero' : 'not valid number'
+}
