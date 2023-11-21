@@ -400,3 +400,26 @@ function switchItUp(number){
     //Write your own Code!
     return number === 1 ? 'One' : number === 2 ? 'Two' : number === 3 ? 'Three': number === 4 ? 'Four' : number === 5 ? 'Five' : number === 6 ? 'Six' : number === 7 ? 'Seven' : number === 8 ? 'Eight' : number === 9 ? 'Nine' : number === 0 ? 'Zero' : 'not valid number'
 }
+
+// Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
+
+function correct(string)
+{
+  let newString = []
+    string.split("").forEach(letter => {
+        if (letter === '5') {
+            letter = 'S'
+        }
+
+        if (letter === '0') {
+            letter = 'O'
+        }
+
+        if (letter === '1') {
+            letter = 'I'
+        }
+      newString.push(letter)
+    })
+
+    return newString.join("")
+}
