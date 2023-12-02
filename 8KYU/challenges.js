@@ -489,3 +489,24 @@ Floats with decimal part non equal to zero are considered UNeven for this kata. 
  function testEven(n) {
     return n % 2 === 0
 }
+
+/* Convert number to reversed array of digits
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order. */
+
+
+function digitize(number) {
+    // Convert the number to a string to easily access its digits.
+    const numberStr = number.toString();
+    
+    // Initialize an empty array to store the reverse array of digits.
+    const reverseArray = [];
+    
+    // Iterate through the characters (digits) in the string in reverse order.
+    for (let i = numberStr.length - 1; i >= 0; i--) {
+      // Convert the character back to an integer and push it to the array.
+      const digit = parseInt(numberStr[i]);
+      reverseArray.push(digit);
+    }
+    
+    return reverseArray;
+  }

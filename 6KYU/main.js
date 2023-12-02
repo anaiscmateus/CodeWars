@@ -1,6 +1,6 @@
 /* Write Number in Expanded Form
 You will be given a number and you will need to return it as a string in Expanded Form. */
-// parameters - number 
+// parameters - number - integer
 // return the expanded form of the number in a string '10 + 2'
 
 function expandedForm(num) {
@@ -9,6 +9,7 @@ function expandedForm(num) {
     // convert it to a string
     // loop through each of the numbers in the string 
     // take the length of the string into account
+
     let expandedNumber = []
     let lastNumIndex = num.toString().length - 1
     num.toString().split("").forEach((digit, i) => {
@@ -237,7 +238,7 @@ Example
 function duplicateCount(text){
 
   const counter = {}
-  let dupeCount = 0
+  let result = 0
   text.toLowerCase().split("").forEach(e => {
     if(counter[e]) {
         counter[e] ++
@@ -248,11 +249,11 @@ function duplicateCount(text){
 
   for (const [key, value] of Object.entries(counter)) {
     if (value > 1) {
-        dupeCount++
+        result++
     }
   }
 
-  return dupeCount
+  return result
 }
 
 console.log(duplicateCount('abcde'))
