@@ -301,3 +301,20 @@ function longest(s1, s2) {
 
     return newStr.sort().join("")
 }
+
+
+
+function disemvowel(str) {
+    const disemvowelStr = str.split("").map(letter => {
+        const lowercaseLetter = letter.toLowerCase();
+        if (!(lowercaseLetter === 'a' || lowercaseLetter === 'e' || lowercaseLetter === 'i' || lowercaseLetter === 'o' || lowercaseLetter === 'u')) {
+            return letter;
+        }
+    }).join("");
+
+    return disemvowelStr;
+}
+
+console.log(new Date)
+
+console.log(disemvowel("This website is for losers LOL!"))
