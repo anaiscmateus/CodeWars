@@ -103,7 +103,159 @@ var max = function(list){
     return Math.max(...list)
 }
 
-console.log(min([-52, 56, 30, 29, -54, 0, -110]), -110);
-console.log(min([42, 54, 65, 87, 0]), 0);
-console.log(max([4,6,2,1,9,63,-134,566]), 566);
-console.log(max([5]), 5);
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
+
+// parameters - string
+// returns a string with no duplicates
+/* examples - ["abracadabra","allottee","assessee"]),['abracadabra','alote','asese']
+["kelless","keenness"]), ['keles','kenes'] */
+
+
+function dup(s) {
+    // loop through each letter
+    // check if the current letter is the same as the next letter
+    // if its not the same, add it to the new array
+    let noDupes = []
+
+    for (let i = 0; i < s.length; i++) {
+        const word = s[i].split("")
+        
+        for (let i = 0; i < word.length; i++) {
+            const letter = word[i]
+            const nextLetter = word[i + 1]
+
+            if (letter === nextLetter) {
+                word.splice(i, 1)
+            }         
+        }
+
+        noDupes.push(word.join(""))
+    }
+
+    return noDupes
+};
+
+// console.log(dup(["ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"]))
+// console.log(dup(["abracadabra","allottee","assessee"]))
+
+
+
+// example problems
+/* Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
+
+If two words have the same last letter, the returned array should show them in the order they appeared in the given string.
+
+All inputs will be valid. */
+
+// parameters - string of words - like a sentence, all lowercase, no periods
+// return an array of the words - each word is an element in the array
+// examples - "i love coding" => "love coding i"
+
+function organizedList(x) {
+    // split(" ") x
+    // loop through each word, and grab the last letter
+    // the index of the word will be ordered in alphabetical order by the last letter
+    const listOfWords = x.split(" ").sort((a, b) => a.charCodeAt(a[-1]) - b.charCodeAt(b[-1]))
+
+    return listOfWords
+}
+
+// console.log(organizedList('i love coding'))
+// console.log(organizedList('man i need a taxi up to chicago'))
+
+/* Return the number of unique arrays that can be formed by picking exactly one element from each subarray.
+
+For example: solve([[1,2],[4],[5,6]]) = 4, because it results in only 4 possibilites. They are [1,4,5],[1,4,6],[2,4,5],[2,4,6].
+
+Make sure that you don't count duplicates; for example solve([[1,2],[4,4],[5,6,6]]) = 4, since the extra outcomes are just duplicates.
+
+solve([[1,2],[4],[5,6]]),4)
+solve([[1,2],[4,4],[5,6,6]]),4)
+solve([[1,2],[3,4],[5,6]]),8)
+solve([[1,2,3],[3,4,6,6,7],[8,9,10,12,5,6]]),72)
+
+Hint: You have an array full of arrays. Map through the parent array and make sure each sub array is a set aka no duplicate numbers. Once each sub array contains no duplicates you can just reduce multiplying the length of each sub array together to get the total combinations  */
+
+// params - taking in an array of arrays
+// return a number based on the product of the non duplicate array. 
+
+function calcNumOfUniqueArrays(arr) {
+    // loop through the array to identify the duplicates
+    // remove one duplicate value from the array
+
+    let counter = {}
+
+    arr.forEach(e => {
+        e.forEach(x => {
+            if (counter[x]) {
+                counter[x] ++
+            } else {
+                counter[x] = 1
+            }
+        })
+
+        for (const [keys, value] of Object.entries(counter)) {
+            if (value === 1) {
+
+            }
+        }    
+    })
+
+
+    return counter
+
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (counter[arr[i]]) {
+    //         counter[arr[i]] ++
+    //     } else {
+    //         counter[arr[i]] = 1
+    //     }
+    // }
+
+    // return counter
+}
+
+// console.log(calcNumOfUniqueArrays([[1,2],[4],[5,6]]))
+// console.log(calcNumOfUniqueArrays([[1,2],[4,4],[5,6,6]]))
+
+
+/* Count the number of Duplicates
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+Example
+"abcde" -> 0 # no characters repeats more than once
+"aabbcde" -> 2 # 'a' and 'b'
+"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+"indivisibility" -> 1 # 'i' occurs six times
+"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+"aA11" -> 2 # 'a' and '1'
+"ABBA" -> 2 # 'A' and 'B' each occur twice */
+
+// params - string 
+// returns the count of duplicate characters in the string
+
+function duplicateCount(text){
+
+  const counter = {}
+  let dupeCount = 0
+  text.toLowerCase().split("").forEach(e => {
+    if(counter[e]) {
+        counter[e] ++
+    } else {
+        counter[e] = 1
+    }
+  })
+
+  for (const [key, value] of Object.entries(counter)) {
+    if (value > 1) {
+        dupeCount++
+    }
+  }
+
+  return dupeCount
+}
+
+console.log(duplicateCount('abcde'))
+console.log(duplicateCount('aabbcde'))
+console.log(duplicateCount('aabBcde'))
+

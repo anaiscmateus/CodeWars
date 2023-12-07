@@ -315,6 +315,4 @@ function disemvowel(str) {
     return disemvowelStr;
 }
 
-console.log(new Date)
-
 console.log(disemvowel("This website is for losers LOL!"))
