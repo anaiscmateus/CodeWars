@@ -315,4 +315,36 @@ function disemvowel(str) {
     return disemvowelStr;
 }
 
-console.log(disemvowel("This website is for losers LOL!"))
+
+/* You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+#Examples:
+
+Kata.getMiddle("test") should return "es"
+
+Kata.getMiddle("testing") should return "t"
+
+Kata.getMiddle("middle") should return "dd"
+
+Kata.getMiddle("A") should return "A"
+#Input
+
+A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+
+#Output
+
+The middle character(s) of the word represented as a string. */
+
+// params - a word (str)
+// return the middle char of the word if the length if odd, the middle 2 if the word length in even
+// split the word
+// check if the word is even or odd word.length % 2  === 0
+// if even, return the middle two letters
+// if odd return the middle letter
+
+function getMiddle(word) {
+    const splitWord = word.split("");
+    const middleIndex = Math.floor(splitWord.length / 2)
+    
+    return splitWord.length % 2 === 0 ? splitWord[middleIndex - 1] + splitWord[middleIndex] : splitWord[middleIndex]
+}
