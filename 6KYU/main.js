@@ -282,3 +282,50 @@ function removeEveryOther(arr) {
   console.log(removeEveryOther([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),[1, 3, 5, 7, 9])
   console.log(removeEveryOther([[1, 2]]), [[1, 2]])
   console.log(removeEveryOther([['Goodbye'], {'Great': 'Job'}]),[['Goodbye']])
+
+/* Given a string of words, you need to find the highest scoring word.
+
+Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+For example, the score of abad is 8 (1 + 2 + 1 + 4).
+
+high('man i need a taxi up to ubud'), 'taxi');
+high('what time are we climbing up the volcano'), 'volcano'); 
+high('take me to semynak'), 'semynak');   
+high('aa b'), 'aa');
+high('b aa'), 'b');
+high('bb d'), 'bb');
+high('d bb'), 'd');
+high('aaa b'), 'aaa');
+
+You need to return the highest scoring word as a string.
+
+If two words score the same, return the word that appears earliest in the original string.
+
+All letters will be lowercase and all inputs will be valid. */
+
+// params - string of words
+// return the highest scoring word
+// point are according to the position in the alphabet
+
+function high(str) {
+    const arrOfWords = str.split(" ");
+  
+    const scores = arrOfWords.map(word =>
+      word.split("").reduce((a, b) => a + b.charCodeAt() - 96, 0)
+    );
+  
+    const maxScore = Math.max(...scores);
+    const indexOfMaxScore = scores.indexOf(maxScore);
+  
+    return arrOfWords[indexOfMaxScore];
+  }
+  
+  console.log(high("man i need a taxi up to ubud"), "taxi");
+  console.log(high('what time are we climbing up the volcano'), 'volcano');
+  console.log(high('take me to semynak'), 'semynak');
+  console.log(high('aa b'), 'aa');
+  console.log(high('b aa'), 'b');
+  console.log(high('bb d'), 'bb');
+  console.log(high('d bb'), 'd');
+  console.log(high('aaa b'), 'aaa');
