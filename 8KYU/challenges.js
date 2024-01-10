@@ -697,3 +697,10 @@ class Kata {
 function sum(numbers) {
   return numbers.reduce((a, b) => a + b, 0);
 }
+
+// Now you have to write a function that takes an argument and returns the square of it.
+
+// Write the "square"-function here
+function square(num) {
+  return num * num
+}
