@@ -329,3 +329,16 @@ function high(str) {
   console.log(high('bb d'), 'bb');
   console.log(high('d bb'), 'd');
   console.log(high('aaa b'), 'aaa');
+
+  function alphabetPosition(text) {
+    return text
+      .toLowerCase()
+      .split("")
+      .map((letter) => {
+        return letter.charCodeAt(0) - 96 > 0 && letter.charCodeAt(0) - 96 <= 26
+          ? letter.charCodeAt(0) - 96
+          : null;
+      })
+      .filter(Number)
+      .join(" ");
+  }
