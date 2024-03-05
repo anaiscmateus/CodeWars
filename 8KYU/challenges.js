@@ -1,67 +1,65 @@
 /* 8KYU */
 // GOAL: Code as fast as you can! You need to double the integer and return it.
 function doubleInteger(i) {
-    // i will be an integer. Double it and return it.
+  // i will be an integer. Double it and return it.
 
-    i += i // add i to itself
-    return i // return the sum
+  i += i; // add i to itself
+  return i; // return the sum
 }
 
 // GOAL: It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
-function removeChar(str){
-    
-    let word = '' // set an empty variable to hold the new word
+function removeChar(str) {
+  let word = ""; // set an empty variable to hold the new word
 
-    for (let i = 1; i < str.length - 1; i++) {
-        // loop through the word starting from the second letter to the second to last letter, add those letters to the 'word' variable
-        word += str[i]
-    }
-   
-    return word // return the new word
+  for (let i = 1; i < str.length - 1; i++) {
+    // loop through the word starting from the second letter to the second to last letter, add those letters to the 'word' variable
+    word += str[i];
+  }
+
+  return word; // return the new word
 }
 
 // GOAL: You get an array of numbers, return the sum of all of the positives ones.
 // Example [1,-4,7,12] => 1 + 7 + 12 = 20
 // Note: if there is nothing to sum, the sum is default to 0.
-arrOfNums = [1,-4,7,12]
+arrOfNums = [1, -4, 7, 12];
 
 function positiveSum(arr) {
-    
-    let sum = 0 // set sum = 0 as default
+  let sum = 0; // set sum = 0 as default
 
-    for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     // loop through all of the numbers in the array
 
-        let num = arr[i]  // give the numbers in the array a variable of num
+    let num = arr[i]; // give the numbers in the array a variable of num
 
-        if (num > 0) {
-            // if the number is greater than zero, add that number to the sum
-            sum += num
-        }
+    if (num > 0) {
+      // if the number is greater than zero, add that number to the sum
+      sum += num;
     }
+  }
 
-    return sum // return the sum of the positive numbers
+  return sum; // return the sum of the positive numbers
 }
 
 // GOAL: You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
 // Considering these factors, write a function that tells you if it is possible to get to the pump or not.
 // Function should return true if it is possible and false if not.
 const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
-    // TODOs
-    const totalFuel = mpg * fuelLeft // set a variable for total fuel calculation
+  // TODOs
+  const totalFuel = mpg * fuelLeft; // set a variable for total fuel calculation
 
-    if (totalFuel >= distanceToPump) {
-        // check to see if the total fuel is greater than or equal to the distance to the nearest pump
-        return true // if true, it's possible
-    } else {
-        return false // if false, it's not possible
-    }
-}
+  if (totalFuel >= distanceToPump) {
+    // check to see if the total fuel is greater than or equal to the distance to the nearest pump
+    return true; // if true, it's possible
+  } else {
+    return false; // if false, it's not possible
+  }
+};
 
 // GOAL: Implement a function which convert the given boolean value into its string representation.
 // Note: Only valid inputs will be given.
-function booleanToString(b){
-    return b.toString() // convert b to a string and return it
+function booleanToString(b) {
+  return b.toString(); // convert b to a string and return it
 }
 
 // Introduction
@@ -70,46 +68,46 @@ function booleanToString(b){
 // Task
 // Given a year, return the century it is in.
 function century(year) {
-    // Finish this :)
-    // a century is defined by 100 years. divide by 100 to see how many chunks of 100 years it has
+  // Finish this :)
+  // a century is defined by 100 years. divide by 100 to see how many chunks of 100 years it has
 
-    let century = Math.ceil(year/100) // divide the year by 100 and round up to the nearest whole number    
+  let century = Math.ceil(year / 100); // divide the year by 100 and round up to the nearest whole number
 
-    return century // return century
+  return century; // return century
 }
 
 // GOAL: Clock shows h hours, m minutes and s seconds after midnight.
 // Your task is to write a function which returns the time since midnight in milliseconds.
-function past(h, m, s){
-    //#Happy Coding! ^_^
-    timeSinceMidnight = (h * 3600000) + (m * 60000) + (s * 1000)
-    return timeSinceMidnight
+function past(h, m, s) {
+  //#Happy Coding! ^_^
+  timeSinceMidnight = h * 3600000 + m * 60000 + s * 1000;
+  return timeSinceMidnight;
 }
 
 // Complete the solution so that it reverses the string passed into it.
-function solution(str){
-    // set an empty string to store the reversed word.
-    let backwards = ''
+function solution(str) {
+  // set an empty string to store the reversed word.
+  let backwards = "";
 
-    // for loop with i equal to the length of the word given minus 1.
-    for (let i = str.length - 1; i > -1; i--) {
-        // access the character at index of the word
-        backwards += str[i] // concat that character to `backwards`
-    }    
-   
-    return backwards  //return the reversed string
+  // for loop with i equal to the length of the word given minus 1.
+  for (let i = str.length - 1; i > -1; i--) {
+    // access the character at index of the word
+    backwards += str[i]; // concat that character to `backwards`
+  }
+
+  return backwards; //return the reversed string
 }
 
-solution('world')
+solution("world");
 
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
 function evenOrOdd(number) {
-    //check to see if number is even
-    if (number % 2 === 0) {
-    return 'Number is even'
-    } else {
-    return 'Number is odd'
-    }
+  //check to see if number is even
+  if (number % 2 === 0) {
+    return "Number is even";
+  } else {
+    return "Number is odd";
+  }
 }
 
 // Your task is to create a function that does four basic mathematical operations.
@@ -117,42 +115,41 @@ function evenOrOdd(number) {
 // The function should take three arguments - operation(string/char), value1(number), value2(number).
 // The function should return result of numbers after applying the chosen operation.
 function basicOp(operation, value1, value2) {
-    // Code
-    if (operation === '+') {
-      return value1 + value2
-      } else if (operation === '-') {
-          return value1 - value2
-      } else if (operation === '*') {
-          return value1 * value2
-      } else if (operation === '/') {
-          return value1 / value2
-      }
-  }       
+  // Code
+  if (operation === "+") {
+    return value1 + value2;
+  } else if (operation === "-") {
+    return value1 - value2;
+  } else if (operation === "*") {
+    return value1 * value2;
+  } else if (operation === "/") {
+    return value1 / value2;
+  }
+}
 
 /* Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
 Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0. */
 
 function paperwork(n, m) {
-    if (n > 0 && m > 0) {
-        return n * m
-    } else {
-        return 0
-    }
+  if (n > 0 && m > 0) {
+    return n * m;
+  } else {
+    return 0;
+  }
 }
-
 
 /* Create a function which answers the question "Are you playing banjo?".
 If your name starts with the letter "R" or lower case "r", you are playing banjo!
 */
 
-function areYouPlayingBanjo(name) {  
-    let firstLetter = name[0] // get the first letter of the name
-    if (firstLetter === 'r' || firstLetter === 'R') {
+function areYouPlayingBanjo(name) {
+  let firstLetter = name[0]; // get the first letter of the name
+  if (firstLetter === "r" || firstLetter === "R") {
     // if check to see if the first letter is "R" or "r"
-        return name + " plays banjo"
-    } else {
-        return name + " does not play banjo"
-    }
+    return name + " plays banjo";
+  } else {
+    return name + " does not play banjo";
+  }
 }
 
 /* You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
@@ -162,21 +159,21 @@ Array can contain numbers or strings. X can be either.
 Return true if the array contains the value, false if not. */
 
 function check(a, x) {
-    // your code here
-    if (a.includes(x)) {
+  // your code here
+  if (a.includes(x)) {
     // check to see if the array 'a' includes the value passed in 'x'
-        return true // if yes, return true
-    } else {
-        return false // if not, return false
-    }
+    return true; // if yes, return true
+  } else {
+    return false; // if not, return false
+  }
 }
 
 // Write a function which converts the input string to uppercase.
 
 function makeUpperCase(str) {
-    // Code here
-    return str.toUpperCase()
-  }
+  // Code here
+  return str.toUpperCase();
+}
 
 /* All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
 
@@ -185,34 +182,32 @@ Write a function feast that takes the animal's name and dish as arguments and re
 Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals. */
 
 function feast(beast, dish) {
-    //your function here
-      
-      let beastFirst = beast[0]
-      let beastLast = beast[beast.length - 1]
-      let dishFirst = dish[0]
-      let dishLast = dish[dish.length - 1]
-      
-      if (beastFirst === dishFirst && beastLast === dishLast) {
-        return true
-      } else {
-        return false
-      }
-    }
+  //your function here
+
+  let beastFirst = beast[0];
+  let beastLast = beast[beast.length - 1];
+  let dishFirst = dish[0];
+  let dishLast = dish[dish.length - 1];
+
+  if (beastFirst === dishFirst && beastLast === dishLast) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* Given a string, you have to return a string in which each character (case-sensitive) is repeated once. */
 
 function doubleChar(str) {
-    // Your code here
-    const doubleStr = str.split('').map(function(letter)
-    {
-        return letter + letter
-    })
+  // Your code here
+  const doubleStr = str.split("").map(function (letter) {
+    return letter + letter;
+  });
 
-    return doubleStr.join('')
+  return doubleStr.join("");
 }
-  
-// console.log(doubleChar("abcd"))
 
+// console.log(doubleChar("abcd"))
 
 /* Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
 
@@ -221,26 +216,26 @@ The highest or lowest element respectively is a single element at each edge, eve
 Mind the input validation. */
 
 function sumArray(array) {
-    let sum = 0
-    if (array) {
-        if(array.length > 2) {
-            array.sort((a,b) => a - b)
-            for (let i = 1; i < (array.length - 1); i++) {
-                sum += array[i]
-            }
-        }
+  let sum = 0;
+  if (array) {
+    if (array.length > 2) {
+      array.sort((a, b) => a - b);
+      for (let i = 1; i < array.length - 1; i++) {
+        sum += array[i];
+      }
     }
-    return sum
+  }
+  return sum;
 }
 
-function squareSum(numbers){
-    // Complete the square sum function so that it squares each number passed into it and then sums the results together.
-    let sum = 0
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i] ** 2
-    }
+function squareSum(numbers) {
+  // Complete the square sum function so that it squares each number passed into it and then sums the results together.
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i] ** 2;
+  }
 
-    return sum
+  return sum;
 }
 
 /* Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
@@ -252,13 +247,15 @@ Write a program where Alex can input (n) how many times the hoop goes round and 
 
 // what will the function return?
 // an encouraging message
-    // if n > 10, then the message will be different
+// if n > 10, then the message will be different
 
-function hoopCount (n) {
-    // check to see if n >= 10
-    // if yes, we are going to console log "Great, now move on to tricks"
-    // if n < 10 then console log "Keep at it until you get it"
-    return n >= 10 ? "Great, now move on to tricks" : 'Keep at it until you get it'
+function hoopCount(n) {
+  // check to see if n >= 10
+  // if yes, we are going to console log "Great, now move on to tricks"
+  // if n < 10 then console log "Keep at it until you get it"
+  return n >= 10
+    ? "Great, now move on to tricks"
+    : "Keep at it until you get it";
 }
 
 /* Create a function that gives a personalized greeting. This function takes two parameters: name and owner. */
@@ -268,11 +265,13 @@ function hoopCount (n) {
 // what will the function return?
 // the message "hello boss" if the name is equal to the owner, and "hello guest" if not
 
-function greet (name, owner) {
-    // have a conditional to check to see if the name === owner
-    // if it is, return "hello boss"
-    // else, return "hello customer"
-    return name.toLowerCase() === owner.toLowerCase() ? "Hello boss" : "Hello guest"
+function greet(name, owner) {
+  // have a conditional to check to see if the name === owner
+  // if it is, return "hello boss"
+  // else, return "hello customer"
+  return name.toLowerCase() === owner.toLowerCase()
+    ? "Hello boss"
+    : "Hello guest";
 }
 
 /* Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
@@ -282,17 +281,17 @@ function greet (name, owner) {
 // what are the params?
 // array: a list of numbers
 
-// what will the function return? 
+// what will the function return?
 // the product of the nums of the array
 
-function grow(x){
-    // declare product variable and set it equal to 1
-    let product = 1
+function grow(x) {
+  // declare product variable and set it equal to 1
+  let product = 1;
 
-    // loop through each number of the array and multiply it to the product variable
-    x.forEach(n => product *= n)
+  // loop through each number of the array and multiply it to the product variable
+  x.forEach((n) => (product *= n));
 
-    return product // return the product variable
+  return product; // return the product variable
 }
 
 /* There was a test in your class and you passed it. Congratulations!
@@ -309,17 +308,30 @@ Your points are not included in the array of your class's points. For calculatin
 // what do we want to return? return whether or not your grade if higher than the class avg (true or false)
 
 function betterThanAverage(classPoints, yourPoints) {
-    // Your code here
-    // get the average of the grades of your classmates
-    // compare the average to your score and return true or false
-    return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length ? true : false
+  // Your code here
+  // get the average of the grades of your classmates
+  // compare the average to your score and return true or false
+  return yourPoints >
+    classPoints.reduce((a, b) => a + b, 0) / classPoints.length
+    ? true
+    : false;
 }
 
 /* Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade. */
 
-function getGrade (s1, s2, s3) {
-    let avg = (s1 + s2 + s3) / 3
-    return avg < 59 ? 'F' : avg < 69 ? 'D' : avg < 79 ? 'C' : avg < 89 ? 'B' : avg <= 100 ? 'A' : avg
+function getGrade(s1, s2, s3) {
+  let avg = (s1 + s2 + s3) / 3;
+  return avg < 59
+    ? "F"
+    : avg < 69
+    ? "D"
+    : avg < 79
+    ? "C"
+    : avg < 89
+    ? "B"
+    : avg <= 100
+    ? "A"
+    : avg;
 }
 
 /* Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
@@ -327,17 +339,16 @@ function getGrade (s1, s2, s3) {
 For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter. */
 
 const quarterOf = (month) => {
-    // Your code here
-   return month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : 4
-}
-
+  // Your code here
+  return month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : 4;
+};
 
 // Given an array of integers your solution should find the smallest integer.
 class SmallestIntegerFinder {
-    findSmallestInt(args) {
-      return Math.min(...args)
-    }
+  findSmallestInt(args) {
+    return Math.min(...args);
   }
+}
 
 /* After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
 
@@ -348,26 +359,26 @@ Every day you rent the car costs $40. If you rent the car for 7 or more days, yo
 Write a code that gives out the total amount for different days(d). */
 
 function rentalCarCost(d) {
-    // get total
-    // check for number of days to decide the discount off the total
-    let total = d * 40
+  // get total
+  // check for number of days to decide the discount off the total
+  let total = d * 40;
 
-    if (d >= 7) {
-        total -= 50
-    } else if ( d >= 3) {
-        total -= 20
-    }
+  if (d >= 7) {
+    total -= 50;
+  } else if (d >= 3) {
+    total -= 20;
+  }
 
-    return total
+  return total;
 }
 
 /* We need a function that can transform a string into a number. What ways of achieving this do you know?
 
 Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number. */
 
-const stringToNumber = function(str){
-    return Number(str);
-}
+const stringToNumber = function (str) {
+  return Number(str);
+};
 
 /* This function should test if the factor is a factor of base.
 
@@ -384,44 +395,62 @@ For example 2 is not a factor of 7 because: 7 % 2 = 1
 
 Note: base is a non-negative number, factor is a positive number. */
 
-
-function checkForFactor (base, factor) {
-    // code here
-    return base % factor === 0 ? true : false
+function checkForFactor(base, factor) {
+  // code here
+  return base % factor === 0 ? true : false;
 }
 
 /* When provided with a number between 0-9, return it in words.
 
 Input :: 1
 
-Output :: "One". */ 
+Output :: "One". */
 
-function switchItUp(number){
-    //Write your own Code!
-    return number === 1 ? 'One' : number === 2 ? 'Two' : number === 3 ? 'Three': number === 4 ? 'Four' : number === 5 ? 'Five' : number === 6 ? 'Six' : number === 7 ? 'Seven' : number === 8 ? 'Eight' : number === 9 ? 'Nine' : number === 0 ? 'Zero' : 'not valid number'
+function switchItUp(number) {
+  //Write your own Code!
+  return number === 1
+    ? "One"
+    : number === 2
+    ? "Two"
+    : number === 3
+    ? "Three"
+    : number === 4
+    ? "Four"
+    : number === 5
+    ? "Five"
+    : number === 6
+    ? "Six"
+    : number === 7
+    ? "Seven"
+    : number === 8
+    ? "Eight"
+    : number === 9
+    ? "Nine"
+    : number === 0
+    ? "Zero"
+    : "not valid number";
 }
 
 // Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
 
-function correct(string)
-{
-  let newString = []
-    string.split("").forEach(letter => {
-        if (letter === '5') {
-            letter = 'S'
-        }
+function correct(string) {
+  let newString = [];
+  string.split("").forEach((letter) => {
+    if (letter === "5") {
+      letter = "S";
+    }
 
-        if (letter === '0') {
-            letter = 'O'
-        }
+    if (letter === "0") {
+      letter = "O";
+    }
 
-        if (letter === '1') {
-            letter = 'I'
-        }
-      newString.push(letter)
-    })
+    if (letter === "1") {
+      letter = "I";
+    }
+    newString.push(letter);
+  });
 
-    return newString.join("")
+  return newString.join("");
 }
 
 /* I have a cat and a dog.
@@ -443,38 +472,34 @@ Dog Years
 +9 dog years for second year
 +5 dog years for each year after that */
 
-var humanYearsCatYearsDogYears = function(humanYears) {
-    // Your code here!
-    let catYears, dogYears
-    if (humanYears >= 1) {
-      catYears = 15
-      dogYears = 15
-    } 
-    
-    if (humanYears >= 2) {
-      catYears = 24
-      dogYears = 24
-    } 
-    
-    if (humanYears >= 2) {
-      for (let i = 0; i < humanYears - 2; i++) {
-        dogYears += 5
-        catYears += 4
-      }
-    }
-    
-    return [humanYears,catYears,dogYears];
+var humanYearsCatYearsDogYears = function (humanYears) {
+  // Your code here!
+  let catYears, dogYears;
+  if (humanYears >= 1) {
+    catYears = 15;
+    dogYears = 15;
   }
-  
+
+  if (humanYears >= 2) {
+    catYears = 24;
+    dogYears = 24;
+  }
+
+  if (humanYears >= 2) {
+    for (let i = 0; i < humanYears - 2; i++) {
+      dogYears += 5;
+      catYears += 4;
+    }
+  }
+
+  return [humanYears, catYears, dogYears];
+};
 
 /* Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence! */
 
-  function smash (words) {
-    return words.join(" ")
- };
-
-
-
+function smash(words) {
+  return words.join(" ");
+}
 
 /* In this Kata we are passing a number (n) into a function.
 
@@ -486,40 +511,51 @@ Numbers may be positive or negative, integers or floats.
 
 Floats with decimal part non equal to zero are considered UNeven for this kata. */
 
- function testEven(n) {
-    return n % 2 === 0
+function testEven(n) {
+  return n % 2 === 0;
 }
 
 /* Convert number to reversed array of digits
 Given a random non-negative number, you have to return the digits of this number within an array in reverse order. */
 
-
 function digitize(number) {
-    // Convert the number to a string to easily access its digits.
-    const numberStr = number.toString();
-    
-    // Initialize an empty array to store the reverse array of digits.
-    const reverseArray = [];
-    
-    // Iterate through the characters (digits) in the string in reverse order.
-    for (let i = numberStr.length - 1; i >= 0; i--) {
-      // Convert the character back to an integer and push it to the array.
-      const digit = parseInt(numberStr[i]);
-      reverseArray.push(digit);
-    }
-    
-    return reverseArray;
+  // Convert the number to a string to easily access its digits.
+  const numberStr = number.toString();
+
+  // Initialize an empty array to store the reverse array of digits.
+  const reverseArray = [];
+
+  // Iterate through the characters (digits) in the string in reverse order.
+  for (let i = numberStr.length - 1; i >= 0; i--) {
+    // Convert the character back to an integer and push it to the array.
+    const digit = parseInt(numberStr[i]);
+    reverseArray.push(digit);
   }
 
+  return reverseArray;
+}
+
 //   Write a function to split a string and convert it into an array of words.
-function stringToArray(string){
-    return string.split(" ")
+function stringToArray(string) {
+  return string.split(" ");
 }
 
 /* Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
 
 [Make sure you type the exact thing I wrote or the program may not execute properly] */
 
-function greet(name){
-    return `Hello, ${name} how are you doing today?`;
-  }
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
+}
+
+
+/* Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0. Your function only needs to return the result, what is shown between parentheses in the example below is how you reach that result and it's not part of it, see the sample tests. */
+
+var summation = function (num) {
+    // Code here  
+    let total = 0
+    for (let i = 0; i <= num; i++) {
+      total += i
+    }
+    return total
+  }  
